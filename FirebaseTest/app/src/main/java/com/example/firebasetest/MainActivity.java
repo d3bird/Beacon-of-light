@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         userstatus = findViewById(R.id.personstatus);
 
         gpsstring = findViewById(R.id.GPStext);
-        gpsbutton = findViewById(R.id.GPSbutton);
+
     }
 
 
@@ -57,7 +57,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendinfo(View view) {//sends to firebase
         ID = user.getText().toString();
-        status =Integer.valueOf(userstatus.getText().toString());
+        if(userstatus.getText().toString()==""){
+            status =2;
+        }else {
+            status = Integer.valueOf(userstatus.getText().toString());
+        }
+        getgetGPS();
         Entry waffles = new Entry(ID, GPS,status);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -67,11 +72,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void getGPS(View view) {
-       // gpsstring.setText (location.getLongitude() + " " + location.getLatitude());
+
+
+    public void getgetGPS(){
+        GPS= MapsActivity.getcord();
+
 
     }
-
 
     public void switchtomap(View view) {
         startActivity(new Intent(getApplicationContext(),MapsActivity.class));

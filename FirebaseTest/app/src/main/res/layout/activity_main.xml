@@ -34,11 +34,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="name"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04" />
 
     <EditText
         android:id="@+id/personstatus"
@@ -50,7 +51,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="number"
-
+        android:text="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.411"
@@ -74,22 +75,6 @@
         app:layout_constraintTop_toBottomOf="@+id/personstatus"
         app:layout_constraintVertical_bias="0.016" />
 
-    <Button
-        android:id="@+id/GPSbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="get GPS"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.971"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944"
-        android:onClick="getGPS"/>
 
     <Button
         android:id="@+id/buttonmap"
@@ -99,13 +84,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="switchtomap"
         android:text="switch to map"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/GPSbutton"
-        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toEndOf="@+id/send"
         app:layout_constraintTop_toBottomOf="@+id/GPStext"
-        app:layout_constraintVertical_bias="0.897"
-        android:onClick="switchtomap"/>
+        app:layout_constraintVertical_bias="0.897" />
 
 </android.support.constraint.ConstraintLayout>

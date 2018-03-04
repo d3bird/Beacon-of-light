@@ -23,7 +23,14 @@ import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    public static double lo;
+    public static double la;
 
+    public static String getcord(){
+        String temp ="";
+        temp+=la+":"+lo;
+        return temp;
+    }
     private GoogleMap mMap;
 
     LocationManager locationManager;
@@ -54,7 +61,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 @Override
                 public void onLocationChanged(Location location) {
                     double lat = location.getLatitude();
+                    la= lat;
                     double log = location.getLongitude();
+                    lo =log;
                     LatLng latLng = new LatLng(lat,log);
                     Geocoder geocoder = new Geocoder(getApplicationContext());
 
