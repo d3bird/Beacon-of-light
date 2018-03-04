@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Beacon of Light (Host)</string>
+    <string name="app_name">Beacon of Hope (Host)</string>
     <string name="title_activity_maps">Map</string>
 
 <string-array name="disasters">
