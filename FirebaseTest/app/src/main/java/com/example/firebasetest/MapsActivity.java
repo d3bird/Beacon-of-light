@@ -31,6 +31,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         temp+=la+":"+lo;
         return temp;
     }
+    public static void importplaces(Entry e){
+
+
+
+    }
+
     private GoogleMap mMap;
 
     LocationManager locationManager;
