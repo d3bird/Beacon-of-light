@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Beacon of Light (Host)</string>
+    <string name="title_activity_maps">Map</string>
+
+<string-array name="disasters">
+    <item>earthquake</item>
+    <item>fire</item>
+    <item>school shooter</item>
+    <item>tornado</item>
+</string-array>
+    <string-array name="positives">
+        <item>evac</item>
+        <item>police</item>
+        <item>medical care</item>
+        <item>firemen</item>
+    </string-array>
+
+</resources>
