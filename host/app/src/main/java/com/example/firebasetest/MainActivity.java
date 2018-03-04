@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     double[] LO ={-84.506192,-84.503379,-84.502511,-84.511164,-84.520706};
     double[] LA ={39.140375,39.139537,39.135282,39.129161,39.129311};
     TextView danger;
-
+    TextView eviltex;// = findViewById(R.id.eviltext);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }else if(myentry.getStatus()==5){
                     danger.append(myentry.getID()+'\n');
                 }
+                eviltex = findViewById(R.id.eviltext);
             }
 
             @Override
@@ -210,8 +211,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void switchevil(View view) {
         if(evil){
             evil = false;
-
+            eviltex.setText("good");
         }else{
+            eviltex.setText("evil");
             evil =true;
         }
 

@@ -3,16 +3,16 @@
     <string name="title_activity_maps">Map</string>
 
 <string-array name="disasters">
-    <item>earthquake</item>
-    <item>fire</item>
-    <item>school shooter</item>
-    <item>tornado</item>
+    <item>Earthquake</item>
+    <item>Fire</item>
+    <item>School shooter</item>
+    <item>Tornado</item>
 </string-array>
     <string-array name="positives">
-        <item>evac</item>
-        <item>police</item>
-        <item>medical care</item>
-        <item>firemen</item>
+        <item>Evacuate the Area</item>
+        <item>Police Incoming</item>
+        <item>Medical Care</item>
+        <item>Firemen Responding</item>
     </string-array>
 
 </resources>
