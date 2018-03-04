@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
     int status = 0;
     int priority = 0;
 
-    public EditText user; //= findViewById(R.id.name);
-    public EditText userstatus;// = findViewById(R.id.personstatus);
+    public EditText user;
+    public EditText userstatus;
     public TextView gpsstring;
 
-    public Button gpsbutton;// = findViewById(r.id.GPSbutton);
+
 
 
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-// locationManager.requestLocationUpdates("gps", 60000, 0, locationListener);
+
 
     public void sendinfo(View view) {//sends to firebase
         ID = user.getText().toString();
@@ -72,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void receive(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Priority1");
+        //myRef.
+    }
 
 
     public void getgetGPS(){
