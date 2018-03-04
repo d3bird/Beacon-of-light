@@ -128,7 +128,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Entry waffles = new Entry(ID, GPS,status);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Priority"+priority);//determins were it is sent to
+        DatabaseReference myRef;
+        if(status ==0){
+            myRef = database.getReference("Priority"+"0");//determins were it is sent to
+            myRef.push().setValue(waffles);//sends the entry
+        }
+        myRef = database.getReference("Priority"+"1");//determins were it is sent to
 
         myRef.push().setValue(waffles);//sends the entry
 
