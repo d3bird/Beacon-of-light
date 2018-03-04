@@ -18,12 +18,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Entry myentry = new Entry("Jordan", "Bananas", 1);
+        Entry myentry = new Entry("scott2", "nutterbutters", 8);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
+        DatabaseReference myRef = database.getReference("Priority0");
 
-        myRef.setValue(myentry);
+        myRef.push().setValue(myentry);
+
     }
 
 

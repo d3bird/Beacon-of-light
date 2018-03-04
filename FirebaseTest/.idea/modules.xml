@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FirebaseTest.iml" filepath="$PROJECT_DIR$/FirebaseTest.iml" />
+      <module fileurl="file://C:\Users\dogbi\Desktop\beacon of light\Beacon-of-light\FirebaseTest\FirebaseTest.iml" filepath="C:\Users\dogbi\Desktop\beacon of light\Beacon-of-light\FirebaseTest\FirebaseTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\dogbi\Desktop\beacon of light\Beacon-of-light\FirebaseTest\app\app.iml" filepath="C:\Users\dogbi\Desktop\beacon of light\Beacon-of-light\FirebaseTest\app\app.iml" />
     </modules>
   </component>
 </project>
