@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if(myentry.getStatus() ==4) {
                     MapsActivity.importplaces(myentry);
                 }else if(myentry.getStatus()==5){
-                    
+
                 }
             }
 

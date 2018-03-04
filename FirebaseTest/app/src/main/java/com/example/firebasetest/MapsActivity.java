@@ -20,11 +20,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Vector;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     public static double lo;
     public static double la;
+
+    public static Vector<Entry> events = new Vector<Entry>(5);
 
     public static String getcord(){
         String temp ="";
@@ -32,9 +35,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return temp;
     }
     public static void importplaces(Entry e){
-
-
-
+        events.add(e);
     }
 
     private GoogleMap mMap;
@@ -79,6 +80,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         ad+=addressList.get(0).getCountryName();
                         mMap.addMarker(new MarkerOptions().position(latLng).title(ad));
                         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+
+                        LatLng temploc;
+                        double LA;
+                        double LO;
+                        String[] split;
+                        String title ="";
+                        for (int i = 0; i < events.size();i++){
+                            split = events.get(i).getGPS().split(":");
+                            title = events.get(i).getID();
+                            LA =Double.parseDouble(split[0]);
+                            LO=Double.parseDouble(split[1]);
+                            temploc = new LatLng(LA,LO);
+                            mMap.addMarker(new MarkerOptions().position(temploc).title(title));
+                            title = "";
+                        }
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -114,6 +132,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         ad+=addressList.get(0).getCountryName();
                         mMap.addMarker(new MarkerOptions().position(latLng).title(ad));
                         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
+                        LatLng temploc;
+                        double LA;
+                        double LO;
+                        String[] split;
+                        String title ="";
+                        for (int i = 0; i < events.size();i++){
+                            split = events.get(i).getGPS().split(":");
+                            title = events.get(i).getID();
+                            LA =Double.parseDouble(split[0]);
+                            LO=Double.parseDouble(split[1]);
+                            temploc = new LatLng(LA,LO);
+                            mMap.addMarker(new MarkerOptions().position(temploc).title(title));
+                            title = "";
+                        }
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
