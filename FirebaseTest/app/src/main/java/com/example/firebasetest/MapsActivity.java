@@ -76,10 +76,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     try {
                         List<Address> addressList =  geocoder.getFromLocation(lat,log,1);
-                        String ad = addressList.get(0).getLocality()+" , ";
-                        ad+=addressList.get(0).getCountryName();
+                        String ad = addressList.get(0).getAddressLine(0);
+                        String[] r = ad.split(",");
+                        ad = r[0]+r[1]+" (you) ";
                         mMap.addMarker(new MarkerOptions().position(latLng).title(ad));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+                        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng) );
 
 
                         LatLng temploc;
@@ -128,10 +129,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     try {
                         List<Address> addressList =  geocoder.getFromLocation(lat,log,1);
-                        String ad = addressList.get(0).getLocality()+" , ";
-                        ad+=addressList.get(0).getCountryName();
+                        String ad = addressList.get(0).getAddressLine(0);
+                        String[] r = ad.split(",");
+                        ad = r[0]+r[1]+" (you) ";
+
                         mMap.addMarker(new MarkerOptions().position(latLng).title(ad));
                         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+
 
                         LatLng temploc;
                         double LA;

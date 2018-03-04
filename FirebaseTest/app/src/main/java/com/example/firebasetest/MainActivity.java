@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String GPS = "";
     int status ;
     int priority = 0;
-
+    TextView danger;
     public EditText user;
 
     @Override
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         user = findViewById(R.id.name);
 
-
+        danger = findViewById(R.id.dangerevents);
 
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if(myentry.getStatus() ==4) {
                     MapsActivity.importplaces(myentry);
                 }else if(myentry.getStatus()==5){
-
+                    danger.append(myentry.getID()+'\n');
                 }
             }
 
