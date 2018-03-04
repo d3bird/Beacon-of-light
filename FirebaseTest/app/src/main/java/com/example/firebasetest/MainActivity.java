@@ -27,21 +27,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String ID = "";
     String GPS = "";
-    int status = 0;
+    int status ;
     int priority = 0;
 
     public EditText user;
-    public EditText userstatus;
-    public TextView gpsstring;
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,26 +42,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         user = findViewById(R.id.name);
-        userstatus = findViewById(R.id.personstatus);
 
-      //  gpsstring = findViewById(R.id.GPStext);
+
+
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
-// Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.options, android.R.layout.simple_spinner_item);
-// Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
-
+        spinner.setOnItemSelectedListener(this);
     }
 
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id) {
-        // An item was selected. You can retrieve the selected item using
-        // parent.getItemAtPosition(pos)
+        status = pos;
+
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
@@ -78,11 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendinfo(View view) {//sends to firebase
         ID = user.getText().toString();
-        if(userstatus.getText().toString()==""){
-            status =2;
-        }else {
-            status = Integer.valueOf(userstatus.getText().toString());
-        }
+
         getgetGPS();
         Entry waffles = new Entry(ID, GPS,status);
 
